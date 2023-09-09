@@ -16,6 +16,6 @@
     ],
     "target": "es2015"
   },
-  "include": ["**/*.ts", "**/*.tsx", "src/templates/blog-post.js"],
+  "include": ["**/*.ts", "**/*.tsx", "src/templates/blog-post.js", "src/pages/404.js"],
   "exclude": ["node_modules/*", "public/*"]
 }

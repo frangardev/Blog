@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Header from "../components/Header/Header"
+import {CardLong} from "../components/Card/CardLong"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title hey`
@@ -22,39 +23,23 @@ const BlogIndex = ({ data, location }) => {
       </Layout>
     )
   }
-
+  // React.useEffect(()=>{
+  //   const isDarkUser = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  //   const body = document.querySelector('body') 
+  //   body.className = isDarkUser ? 'dark' : ''
+  // },[])
   return (
     <Layout location={location} title={siteTitle}>
       <Header />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
+      {/* <Bio /> */}
+      <h2>ARTÍCULOS RECIENTES</h2>
+      <ol style={{ listStyle: `none`, padding: '0', width: '100%' }}>
         {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+          // const title = post.frontmatter.title || post.fields.slug
 
           return (
             <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                      <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
+              <CardLong post={post}/>
             </li>
           )
         })}

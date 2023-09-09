@@ -1,0 +1,40 @@
+.CardLong__container{
+    width: calc(100% - 100px);
+    padding: 50px 50px 27px;
+    margin-bottom: 52px;
+    border-radius: var(--br);
+    background-color: var(--blue);
+}
+.CardLong__title{
+    font-size: 26px;
+    color: var(--color-text);
+}
+.CardLong__container_footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tacks{
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--design-color);
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--color-text);
+}
+.btn_ver{
+    padding: 8px 10px;
+    color: var(--white);
+    background-color: var(--color-text);
+}
+
+@media (min-width: 800px) {
+    .CardLong__title{
+        font-size: 36px;
+    }
+}

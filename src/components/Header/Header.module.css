@@ -1,5 +1,27 @@
 .header {
-  color: steelblue;
-  font-size: 20px;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+ /* width: 100%; */
+ padding: 31px 14px 0;
+ background-color: var(--purple);
+ border-radius: var(--br);
+}
+.textContainer{
+  width: 100%;
+}
+.img{
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  .header {
+    flex-direction: row;
+    padding: 55px 14px 0 39px;
+  }
+  .textContainer{
+    width: 55%;
+  }
+  .img{
+    width: 50%;
+  }
 }
