@@ -1,0 +1,14 @@
+.logo .cls-1 {
+  fill: #e6dff0;
+}
+
+.logo .cls-2 {
+  fill: none;
+}
+
+.logo .cls-3 {
+  fill: #83809e;
+}
+.logo:hover .smoke{
+  transform: translateY(-3px);
+}

@@ -1,14 +1,22 @@
-  /* global.css */
+@font-face {
+  /* font-family: "Arvo";
+  src: url("/fonts/Arvo-regular.woff2") format("woff2"); */
+  font-family: "dogica";
+  src: url("/fonts/dogica.woff2") format("woff2");
+}
 
+
+/* global.css */
 body {
     /* Colors */
     --purple: #B0ACE7;
     --blue: #6ADBFF;
     --white: #fff;
+    --black: #1e1e1e;
 
     --design-color: #B0ACE7;
     --dev-color: #E3F3FB;
-    --desarrollo-p-color: #E6DFF1;
+    --professional-color: #E6DFF1;
     --tutorial-color: #F2F4F6;
 
     --bg:#fff;
@@ -22,10 +30,17 @@ body {
   
     /* Others */
     --br: 9px;
+
+    /* Text */
+    --title: dogica, 'Times New Roman', Times, serif;
+    --subtitle: Arvo, 'Times New Roman', Times, serif;
+    --text: Hind, Arial, Helvetica, sans-serif;
   width: 100%;
   max-width: 1184px;
   margin: 0 auto;
   background-color: var(--bg);
+
+  color-scheme: dark light;
 }
 
 body.dark {
@@ -37,7 +52,7 @@ body.dark {
 
   --design-color: #9F9CD4;
   --dev-color: #A7D7EF;
-  --desarrollo-p-color: #C4BBF0;
+  --professional-color: #C4BBF0;
   --tutorial-color: #C1C1DB;
 
   --bg:#595B83;
@@ -50,6 +65,18 @@ body.dark {
   --color-accent: #C4BBF0;
 }
 
+h1, h2{
+  font-family: var(--title);
+}
+h3{
+  font-family: var(--subtitle);
+}
+p{
+  font-family: var(--text);
+}
+a{
+  text-decoration: none;
+}
 
 @media (min-width: 900px) {
   body{

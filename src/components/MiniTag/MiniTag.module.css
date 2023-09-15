@@ -1,0 +1,27 @@
+.tacks{
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--design-color);
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--color-text);
+}
+.firstTag{
+    border: 2px solid var(--black);
+}
+.develop{
+    background-color: var(--dev-color);
+}
+.design{
+    background-color: var(--design-color);
+}
+.professional{
+    background-color: var(--professional-color);
+}
+.tutorial{
+    background-color: var(--tutorial-color);
+}

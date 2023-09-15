@@ -1,0 +1,13 @@
+.Arrow .cls2{
+    fill: var(--black);
+}
+.Arrow:hover .cls2{
+    fill: var(--white);
+}
+.Arrow .cls1{
+    fill: var(--white);
+    transform: translateY(-6px);
+}
+.Arrow:hover .cls1{
+    fill: var(--black);
+}

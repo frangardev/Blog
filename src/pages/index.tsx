@@ -1,15 +1,18 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Header from "../components/Header/Header"
 import {CardLong} from "../components/Card/CardLong"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title hey`
   const posts = data.allMarkdownRemark.nodes
+
+  console.log('------posts------');
+  console.log(posts);
+  
 
   if (posts.length === 0) {
     return (
@@ -30,13 +33,11 @@ const BlogIndex = ({ data, location }) => {
   // },[])
   return (
     <Layout location={location} title={siteTitle}>
-      <Header />
       {/* <Bio /> */}
       <h2>ARTÍCULOS RECIENTES</h2>
       <ol style={{ listStyle: `none`, padding: '0', width: '100%' }}>
         {posts.map(post => {
           // const title = post.frontmatter.title || post.fields.slug
-
           return (
             <li key={post.fields.slug}>
               <CardLong post={post}/>
@@ -74,6 +75,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tag
         }
       }
     }

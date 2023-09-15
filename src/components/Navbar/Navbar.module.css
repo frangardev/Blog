@@ -1,0 +1,9 @@
+.Navbar{
+    width: 100%;
+    margin: 45px 0;
+    list-style: none;
+    padding: 0;
+}
+.Navbar_li a svg{
+    width: 3rem;
+}

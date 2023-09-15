@@ -2,17 +2,40 @@ import React from 'react'
 import * as styles from './Cards.module.css';
 
 import { Link } from "gatsby"
+import MiniTag from '../MiniTag/MiniTag';
+import Arrow from '../../assets/Arrow/Arrow';
 
 
 function CardLong({post}) {
     const title = post.frontmatter.title || post.fields.slug
+    const tags = post.frontmatter.tag.split(' ')
+    const [colorTag, setColorTag] = React.useState(styles.develop)
+    
+    React.useEffect(()=>{
+        switch (tags[0]) {
+          case 'develop':
+            setColorTag(styles.develop) 
+            break;   
+          case 'design':
+            setColorTag(styles.design) 
+            break;   
+          case 'professional':
+            setColorTag(styles.professional) 
+            break;    
+          default:
+            setColorTag(styles.tutorial) 
+            break;
+        }
+      },[])
+
+    
   return (
     <article
-        className={styles.CardLong__container}
+        className={`${styles.CardLong__container} ${colorTag}`}
         itemScope
         itemType="http://schema.org/Article"
       >
-           <header>
+        <header>
           <h2>
             
             <Link to={post.fields.slug} itemProp="url">
@@ -22,6 +45,7 @@ function CardLong({post}) {
         </header>
         <section>
           <p
+            className={styles.description}
             dangerouslySetInnerHTML={{
               __html: post.frontmatter.description || post.excerpt,
             }}
@@ -30,8 +54,14 @@ function CardLong({post}) {
           <small>{post.frontmatter.date}</small>
         </section>
         <footer className={styles.CardLong__container_footer}>
-          <div className={styles.tacks}>DES</div>
-          <Link to={post.fields.slug} itemProp="url" className={styles.btn_ver}>Ver</Link>
+          <div className={styles.tags__container}>
+            {tags.map(tag => {
+              return(
+                <MiniTag key={tag} tag={tag} isFirstTag={tag === tags[0]}/>
+              )
+            })}
+          </div>
+          <Link to={post.fields.slug} itemProp="url" className={styles.btn_ver}><Arrow /></Link>
         </footer>
       </article>
   )

@@ -2,6 +2,7 @@
 title: My Post
 date: "2023-08-18T22:40:32.169Z"
 description: Poust de pruebas
+tag: "design"
 ---
 
 Hola pinches putitas!!

@@ -138,5 +138,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["dogica", "GoogleGrotesqueRegular", "Droid Sans"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+  }
   ],
 }

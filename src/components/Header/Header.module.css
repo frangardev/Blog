@@ -5,9 +5,13 @@
  padding: 31px 14px 0;
  background-color: var(--purple);
  border-radius: var(--br);
+ margin-bottom: 100px;
 }
 .textContainer{
   width: 100%;
+}
+.text{
+  opacity: .75;
 }
 .img{
   width: 100%;

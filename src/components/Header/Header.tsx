@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 // import imgHeader = '../../'
 
 function Header() {
-  return <header className={styles.header}>
+  return <section className={styles.header}>
     <div className={styles.textContainer}>
 
     <h1 className={styles.title}>¡Hola, bienvenido a mi blog!</h1>
@@ -17,7 +17,7 @@ function Header() {
         src="../../images/image-header.png"
         alt="Dibjo de Fran"
       />
-  </header>
+  </section>
 }
 
 export default Header
