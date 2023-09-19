@@ -8,11 +8,7 @@ import {CardLong} from "../components/Card/CardLong"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title hey`
-  const posts = data.allMarkdownRemark.nodes
-
-  console.log('------posts------');
-  console.log(posts);
-  
+  const posts = data.allMarkdownRemark.nodes  
 
   if (posts.length === 0) {
     return (
@@ -26,18 +22,11 @@ const BlogIndex = ({ data, location }) => {
       </Layout>
     )
   }
-  // React.useEffect(()=>{
-  //   const isDarkUser = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-  //   const body = document.querySelector('body') 
-  //   body.className = isDarkUser ? 'dark' : ''
-  // },[])
   return (
     <Layout location={location} title={siteTitle}>
-      {/* <Bio /> */}
       <h2>ARTÍCULOS RECIENTES</h2>
       <ol style={{ listStyle: `none`, padding: '0', width: '100%' }}>
         {posts.map(post => {
-          // const title = post.frontmatter.title || post.fields.slug
           return (
             <li key={post.fields.slug}>
               <CardLong post={post}/>

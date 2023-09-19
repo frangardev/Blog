@@ -1,0 +1,15 @@
+.BlogPost{
+    background-color: var(--bg-blog-post);
+    padding: 1.5em 2% 4em;
+    width: 88%;
+    margin: 0 auto;
+    border-radius: var(--br);
+}
+
+@media (min-width: 800px) {
+    .BlogPost{
+        /* width: 5%; */
+        max-width: 800px;
+        padding: 2em 10% 4em;
+    }
+}

@@ -1,10 +1,12 @@
 import React from 'react'
 import * as styles from './MiniTag.module.css';
 
-function MiniTag({tag, isFirstTag}) {
-    const [colorTag, setColorTag] = React.useState(styles.dev)
-    const [miniNameTag, seMiniNameTag] = React.useState('')
-    
+type MiniTagProps = {tag:string, isFirstTag:boolean}
+
+function MiniTag({tag, isFirstTag}:MiniTagProps) {
+    const [colorTag, setColorTag] = React.useState(styles.develop)
+    const [miniNameTag, seMiniNameTag] = React.useState('DEV')
+
     React.useEffect(()=>{
         switch (tag) {
           case 'develop':

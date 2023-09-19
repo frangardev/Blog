@@ -6,6 +6,7 @@
  background-color: var(--purple);
  border-radius: var(--br);
  margin-bottom: 100px;
+ color: var(--black);
 }
 .textContainer{
   width: 100%;

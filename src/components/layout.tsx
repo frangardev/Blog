@@ -21,6 +21,13 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
+  // DarkMode
+  // React.useEffect(()=>{
+  //   const isDarkUser = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  //   const body = document.querySelector('body') 
+  //   body.className = isDarkUser ? 'dark' : ''
+  // },[])
+
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>

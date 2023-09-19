@@ -20,6 +20,7 @@ body {
     --tutorial-color: #F2F4F6;
 
     --bg:#fff;
+    --bg-blog-post: #F2F4F6;
 
     --color-primary: #6763B6;
     --color-text: #1E1E1E;
@@ -41,6 +42,7 @@ body {
   background-color: var(--bg);
 
   color-scheme: dark light;
+  color: var(--color-text);
 }
 
 body.dark {
@@ -56,9 +58,11 @@ body.dark {
   --tutorial-color: #C1C1DB;
 
   --bg:#595B83;
+  --bg2:#22243F;
+  --bg-blog-post: #595B83;
 
   --color-primary: #312D47;
-  --color-text: #1E1E1E;
+  --color-text: #fff;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;

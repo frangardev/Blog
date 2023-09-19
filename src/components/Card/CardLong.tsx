@@ -2,9 +2,9 @@ import React from 'react'
 import * as styles from './Cards.module.css';
 
 import { Link } from "gatsby"
-import MiniTag from '../MiniTag/MiniTag';
-import Arrow from '../../assets/Arrow/Arrow';
+import { Icon } from '@iconify/react';
 
+import MiniTag from '../MiniTag/MiniTag';
 
 function CardLong({post}) {
     const title = post.frontmatter.title || post.fields.slug
@@ -61,7 +61,9 @@ function CardLong({post}) {
               )
             })}
           </div>
-          <Link to={post.fields.slug} itemProp="url" className={styles.btn_ver}><Arrow /></Link>
+          <Link to={post.fields.slug} itemProp="url" className={styles.btn_ver}>
+            <Icon icon="memory:arrow-up" rotate={1} />
+          </Link>
         </footer>
       </article>
   )

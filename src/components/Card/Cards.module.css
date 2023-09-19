@@ -4,10 +4,11 @@
     margin-bottom: 52px;
     border-radius: var(--br);
     background-color: var(--blue);
+    color: var(--black);
 }
 .CardLong__title{
     font-size: 26px;
-    color: var(--color-text);
+    color: var(--black);
     border: 0;
 }
 .description{
@@ -21,8 +22,15 @@
 }
 
 .btn_ver{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 47px;
-    transform: rotate(90deg);
+    height: 47px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: var(--black);
 }
 .tags__container{
     display: flex;
