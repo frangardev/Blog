@@ -1,12 +1,21 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import Header from "./Header/Header"
 import Navbar from "./Navbar/Navbar"
+import {PageProps} from 'gatsby'
 
-const Layout = ({ location, title, children }) => {
+type LayoutTypes = {
+  location: PageProps['location'],
+  title: string,
+  children: React.ReactNode
+}
+
+const Layout = ({ location, title, children }: LayoutTypes): JSX.Element => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
+  console.log('Location: ',location, title);
+  
 
   if (isRootPath) {
     header = (

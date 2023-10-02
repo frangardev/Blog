@@ -5,7 +5,7 @@ import SocialContainer from "../SocialContainer/SocialContainer";
 
 // import imgHeader = '../../'
 
-function Header() {
+function Header(): JSX.Element {
   return <section className={styles.header}>
     <div className={styles.textContainer}>
       <h1 className={styles.title}>¡Hola, bienvenido a mi blog!</h1>

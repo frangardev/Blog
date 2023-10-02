@@ -1,7 +1,7 @@
 import React from "react";
 import "./Logo.css";
 
-function Logo({ isNotCompleteLogo }) {
+function Logo({isNotCompleteLogo}: {isNotCompleteLogo:boolean}): JSX.Element {
   return (
     <svg
       id="Logo"

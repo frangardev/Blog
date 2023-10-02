@@ -3,7 +3,7 @@ import * as styles from './MiniTag.module.css';
 
 type MiniTagProps = {tag:string, isFirstTag:boolean}
 
-function MiniTag({tag, isFirstTag}:MiniTagProps) {
+function MiniTag({tag, isFirstTag}:MiniTagProps): JSX.Element {
     const [colorTag, setColorTag] = React.useState(styles.develop)
     const [miniNameTag, seMiniNameTag] = React.useState('DEV')
 

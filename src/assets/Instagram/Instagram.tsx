@@ -1,7 +1,7 @@
 import React from "react";
 import "./Instagram.css";
 
-function Instagram() {
+function Instagram(): JSX.Element {
   return (
     <svg
       id="Instagram"

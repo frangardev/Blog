@@ -4,10 +4,14 @@ import { Link } from "gatsby"
 
 import Logo from '../../assets/Logo/Logo'
 
-function Navbar() {
+function Navbar():JSX.Element {
   return (
     <ul className={styles.Navbar}>
-        <li className={styles.Navbar_li}><Link to='/' itemProp="url"><Logo/></Link></li>
+        <li className={styles.Navbar_li}>
+          <Link to='/' itemProp="url">
+            <Logo isNotCompleteLogo={false}/>
+          </Link>
+          </li>
     </ul>
   )
 }

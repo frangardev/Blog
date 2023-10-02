@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import {CardLong} from "../components/Card/CardLong"
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location }): JSX.Element => {
   const siteTitle = data.site.siteMetadata?.title || `Title hey`
   const posts = data.allMarkdownRemark.nodes  
 

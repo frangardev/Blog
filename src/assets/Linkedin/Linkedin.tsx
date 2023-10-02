@@ -1,7 +1,7 @@
 import React from "react";
 import "./Linkedin.css";
 
-function Linkedin() {
+function Linkedin(): JSX.Element {
   return (
     <svg
       id="Linkedin"

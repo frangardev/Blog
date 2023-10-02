@@ -1,7 +1,7 @@
 import React from "react";
 import "./GitHub.css";
 
-function GitHub() {
+function GitHub(): JSX.Element {
   return (
     <svg
       id="GitHub"

@@ -6,7 +6,7 @@ import Twitter from '../../assets/Twitter/Twitter'
 import Linkedin from '../../assets/Linkedin/Linkedin'
 import GitHub from '../../assets/GitHub/GitHub'
 
-function SocialContainer() {
+function SocialContainer(): JSX.Element {
   return (
     <ul className={styles.SocialContainer}>
         <li>

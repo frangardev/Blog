@@ -1,7 +1,7 @@
 import React from "react";
 import "./Twitter.css";
 
-function Twitter() {
+function Twitter(): JSX.Element {
   return (
     <svg
       id="Twitter"

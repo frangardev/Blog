@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from './Arrow.module.css';
 
-function Arrow() {
+function Arrow(): JSX.Element {
   return (
     <svg
       id="Arrow"

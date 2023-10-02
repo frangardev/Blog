@@ -2,7 +2,26 @@ import React from 'react'
 import * as styles from './BlogPostLayout.module.css';
 import SocialContainer from '../SocialContainer/SocialContainer';
 
-function BlogPostLayout({post}) {
+type PropsTypes = {
+  post:{
+    excerpt:string,
+    fields:{
+      slug:string
+    },
+    frontmatter:{
+      date:string,
+      description:string,
+      tag:string,
+      title:string,
+    },
+    html: string,
+    id:string
+  }
+}
+
+
+const BlogPostLayout: React.FC<PropsTypes> = ({post}): JSX.Element => {
+  
   return (
     <article
         className={styles.BlogPost}

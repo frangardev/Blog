@@ -6,9 +6,26 @@ import { Icon } from '@iconify/react';
 
 import MiniTag from '../MiniTag/MiniTag';
 
-function CardLong({post}) {
-    const title = post.frontmatter.title || post.fields.slug
-    const tags = post.frontmatter.tag.split(' ')
+type Props = {
+  post:{
+    excerpt:string,
+    fields:{
+      slug:string
+    },
+    frontmatter:{
+      date:string,
+      description:string,
+      tag:string,
+      title:string,
+    }
+  }
+}
+
+function CardLong({post}:Props): JSX.Element {
+  console.log(post);
+  
+    const title:string = post.frontmatter.title || post.fields.slug
+    const tags:string[] = post.frontmatter.tag.split(' ')
     const [colorTag, setColorTag] = React.useState(styles.develop)
     
     React.useEffect(()=>{
