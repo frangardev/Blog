@@ -2,7 +2,7 @@
     background-color: var(--bg-blog-post);
     padding: 1.5em 2% 4em;
     width: calc(100% - 4%);
-    margin: 0 auto;
+    margin: 0 auto 5em;
     border-radius: var(--br);
 }
 .bgBody{

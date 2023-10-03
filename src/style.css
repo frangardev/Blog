@@ -21,6 +21,7 @@ body {
 
     --bg:#fff;
     --bg-blog-post: #F2F4F6;
+    --bg-footer: #B0ACE7;
 
     --color-primary: #6763B6;
     --color-text: #1E1E1E;
@@ -36,11 +37,8 @@ body {
     --title: dogica, 'Times New Roman', Times, serif;
     --subtitle: Arvo, 'Times New Roman', Times, serif;
     --text: Hind, Arial, Helvetica, sans-serif;
-  width: 80%;
-  max-width: 1184px;
-  margin: 0 auto;
-  background-color: var(--bg);
 
+  background-color: var(--bg);
   color-scheme: dark light;
   color: var(--color-text);
   transition: all .4s;
@@ -61,6 +59,7 @@ body.dark {
   --bg:#595B83;
   --bg2:#22243F;
   --bg-blog-post: #595B83;
+  --bg-footer: #22243F;
 
   --color-primary: #C4BBF0;
   --color-text: #fff;
@@ -82,9 +81,14 @@ p{
 a{
   text-decoration: none;
 }
+.container__app{
+  width: 80%;
+  max-width: 1184px;
+  margin: 0 auto;
+}
 
 @media (min-width: 900px) {
-  body{
+  .container__app{
     width: 80%;
   }
 }

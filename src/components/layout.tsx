@@ -3,6 +3,7 @@ import { PageProps } from 'gatsby'
 // import { Link } from "gatsby"
 import Header from "./Header/Header"
 import Navbar from "./Navbar/Navbar"
+import Footer from "./Footer/Footer"
 
 type LayoutTypes = {
   location: PageProps['location'],
@@ -46,13 +47,14 @@ const Layout = ({ location, title, children }: LayoutTypes): JSX.Element => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
+      <header className="global-header container__app">{header}</header>
+      <main className="container__app">{children}</main>
+      {/* <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+      </footer> */}
+      <Footer isHome={isRootPath}/>
     </div>
   )
 }
