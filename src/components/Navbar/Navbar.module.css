@@ -1,9 +1,35 @@
 .Navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     margin: 45px 0;
     list-style: none;
     padding: 0;
 }
+.NavLeftContainer{
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
 .Navbar_li a svg{
     width: 3rem;
+}
+.NavLeftContainer li a{
+    color: var(--text);
+    font-family: var(--title);
+    font-size: 12px;
+}
+.NavLeftContainer li a:hover,
+.NavLeftContainer li button:hover{
+    cursor: pointer;
+    color: var(--color-primary);
+}
+.NavLeftContainer li button{
+    padding: 0;
+    font-size: 30px;
+    font-size: 1.8rem;
+    background-color: transparent;
+    border: none;
+    color: var(--text);
 }

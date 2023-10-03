@@ -79,7 +79,7 @@ function CardLong({post}:Props): JSX.Element {
             })}
           </div>
           <Link to={post.fields.slug} itemProp="url" className={styles.btn_ver}>
-            <Icon icon="memory:arrow-up" rotate={1} />
+            <Icon icon="pixelarticons:arrow-up" rotate={1} />
           </Link>
         </footer>
       </article>

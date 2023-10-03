@@ -1,15 +1,40 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import {CardLong} from "../components/Card/CardLong"
 
-const BlogIndex = ({ data, location }): JSX.Element => {
-  const siteTitle = data.site.siteMetadata?.title || `Title hey`
-  const posts = data.allMarkdownRemark.nodes  
+type BlogIndexType = {
+  data: {
+    allMarkdownRemark:{
+      nodes:[{
+        excerpt:string,
+        fields:{
+          slug:string
+        },
+        frontmatter:{
+          date:string,
+          description:string,
+          tag:string,
+          title:string
+        }
+      }] | []
+    },
+    site: {
+      siteMetadata:{
+        title:string
+      }
+    }
+  },
+  location: PageProps['location']
+}
 
+const BlogIndex = ({ data, location }: BlogIndexType): JSX.Element => {
+  const siteTitle = data.site.siteMetadata.title || `Title hey`
+  const posts = data.allMarkdownRemark.nodes  
+  
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -45,7 +70,7 @@ export default BlogIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="All posts" />
+export const Head = () => <Seo title="Home" />
 
 export const pageQuery = graphql`
   {

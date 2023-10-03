@@ -36,13 +36,14 @@ body {
     --title: dogica, 'Times New Roman', Times, serif;
     --subtitle: Arvo, 'Times New Roman', Times, serif;
     --text: Hind, Arial, Helvetica, sans-serif;
-  width: 100%;
+  width: 80%;
   max-width: 1184px;
   margin: 0 auto;
   background-color: var(--bg);
 
   color-scheme: dark light;
   color: var(--color-text);
+  transition: all .4s;
 }
 
 body.dark {
@@ -61,7 +62,7 @@ body.dark {
   --bg2:#22243F;
   --bg-blog-post: #595B83;
 
-  --color-primary: #312D47;
+  --color-primary: #C4BBF0;
   --color-text: #fff;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;

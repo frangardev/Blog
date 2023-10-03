@@ -16,31 +16,36 @@ type PropsTypes = {
     },
     html: string,
     id:string
-  }
+  },
+  children: React.ReactNode
 }
 
 
-const BlogPostLayout: React.FC<PropsTypes> = ({post}): JSX.Element => {
-  
+const BlogPostLayout: React.FC<PropsTypes> = ({ post, children }): JSX.Element => {
+
   return (
-    <article
-        className={styles.BlogPost}
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-          <SocialContainer/>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer>
-        </footer>
-      </article>
+    <>
+      <article
+          className={styles.BlogPost}
+          itemScope
+          itemType="http://schema.org/Article"
+        >
+          <header>
+            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+            <SocialContainer/>
+          </header>
+          <section
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+          <hr />
+          <footer>
+            {children}
+          </footer>
+        </article>
+        <div className={styles.bgBody}></div>
+    </>
   )
 }
 

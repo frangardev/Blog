@@ -1,8 +1,8 @@
 import * as React from "react"
+import { PageProps } from 'gatsby'
 // import { Link } from "gatsby"
 import Header from "./Header/Header"
 import Navbar from "./Navbar/Navbar"
-import {PageProps} from 'gatsby'
 
 type LayoutTypes = {
   location: PageProps['location'],
@@ -13,29 +13,36 @@ type LayoutTypes = {
 const Layout = ({ location, title, children }: LayoutTypes): JSX.Element => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
-  let header
-  console.log('Location: ',location, title);
+  let header: React.ReactNode
+  
+  const [isDark, setIsDark] = React.useState<boolean>()
   
 
   if (isRootPath) {
     header = (
       <>
-      <Navbar/>
+      <Navbar isDarkMode={isDark} setDarkMode={setIsDark}/>
       <Header/>
       </>
     )
   } else {
     header = (
-      <Navbar/>
+      <Navbar isDarkMode={isDark} setDarkMode={setIsDark}/>
     )
   }
 
   // DarkMode
-  // React.useEffect(()=>{
-  //   const isDarkUser = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-  //   const body = document.querySelector('body') 
-  //   body.className = isDarkUser ? 'dark' : ''
-  // },[])
+  React.useEffect(()=>{
+    const isDarkUser:boolean = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    // const body:HTMLElement = document.querySelector('body') 
+    setIsDark(isDarkUser)
+    // body.className = isDarkUser ? 'dark' : ''
+  },[])
+  React.useEffect(()=>{
+    const body:HTMLElement = document.querySelector('body') 
+    // setIsDark(isDarkUser)
+    body.className = isDark ? 'dark' : ''
+  },[isDark])
 
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
